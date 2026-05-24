@@ -1,0 +1,50 @@
+---
+# Techolve ブランド用 Pandoc デフォルト設定
+# 使用例: pandoc document.md -d /techolve/techolve-defaults.yaml -o output.pdf
+
+from: markdown
+template: eisvogel
+pdf-engine: xelatex
+
+filters:
+  - /techolve/filters/mermaid.lua
+
+variables:
+  # フォント（Gen Interface JP）
+  mainfont: "Gen Interface JP"
+  mainfontoptions:
+    - BoldFont=GenInterfaceJP-Bold
+    - ItalicFont=GenInterfaceJP-Light
+    - BoldItalicFont=GenInterfaceJP-SemiBold
+  sansfont: "Gen Interface JP Display"
+  sansfontoptions:
+    - BoldFont=GenInterfaceJPDisplay-Bold
+    - ItalicFont=GenInterfaceJPDisplay-Light
+    - BoldItalicFont=GenInterfaceJPDisplay-SemiBold
+  CJKmainfont: "Gen Interface JP"
+  CJKoptions:
+    - BoldFont=GenInterfaceJP-Bold
+    - ItalicFont=GenInterfaceJP-Light
+  CJKsansfont: "Gen Interface JP Display"
+
+  # タイトルページ
+  titlepage: true
+  titlepage-color: "000000"
+  titlepage-text-color: "FFFFFF"
+  titlepage-rule-color: "FFFFFF"
+  titlepage-rule-height: 4
+  titlepage-logo: /techolve/assets/techolve.png
+  logo-width: 40mm
+
+  # ページ設定
+  toc-own-page: true
+  listings-disable-line-numbers: false
+
+  # リンクカラー（黒で統一）
+  colorlinks: true
+  linkcolor: black
+  urlcolor: black
+  toccolor: black
+
+  # コードブロック
+  code-block-font-size: \small
